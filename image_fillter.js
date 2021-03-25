@@ -1,6 +1,6 @@
 const Jimp = require("jimp");//library for image proccess
 (async function () {
-    const image = await Jimp.read("images/img1.jpg");//get old image and read it
+    const image = await Jimp.read("images/imgage.jpg");//get old image and read it.........on read(path+name of image file)
     /**
      * Add text to image
      */
@@ -19,5 +19,6 @@ const Jimp = require("jimp");//library for image proccess
     //image.blur(1);// more blurer
     //image.invert();//red and blue 
     //image.greyscale();//gray image
-    image.write("images/edited-shapes.jpg"); 
+    await fs.remove("images/image.jpg");//remove the old image
+    image.write("images/image.jpg"); // the new image on the same path with the old name
 })();
